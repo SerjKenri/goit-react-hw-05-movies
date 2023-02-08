@@ -63,7 +63,7 @@ const MovieDetailsPage = () => {
                 src={
                     movieDetails.poster_path
                         ? `https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`
-                        : 'https://ltdfoto.ru/images/2023/02/08/image-1.png'
+                        : 'https://thumbs.filmix.ac/posters/orig/kon4-admiral-2008_435.jpg'
                 }
                 alt={movieDetails.original_title}
             />
