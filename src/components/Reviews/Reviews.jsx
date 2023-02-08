@@ -10,7 +10,7 @@ const Reviews = () => {
     const [reviews, setRewiews] = useState([]);
     const [loader, setLoader] = useState(false);
     const { movieId } = useParams();
-    console.log(reviews);
+
     useEffect(() => {
         setLoader(true);
 
