@@ -1,17 +1,20 @@
 import { useState, useEffect, Suspense } from 'react';
-import { useParams, Outlet, useLocation, useNavigate } from 'react-router-dom';
+import { useParams, Outlet, useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Loader from 'components/Loader';
-import { ShowInfoList } from './MovieDetalisPage.styled';
+import { ShowInfoList, GoBackLink } from './MovieDetalisPage.styled';
+import { BsFillSkipBackwardFill } from 'react-icons/bs';
 
 const MovieDetailsPage = () => {
     const { movieId } = useParams();
     const location = useLocation();
     const [movieDetails, setMovieDetails] = useState({});
     const [loader, setLoader] = useState(false);
-    const navigate = useNavigate();
+    const [comeBack] = useState(() => {
+        return location.state?.from ?? '/movies';
+    });
 
     useEffect(() => {
         setLoader(true);
@@ -44,12 +47,14 @@ const MovieDetailsPage = () => {
 
     return (
         <>
-            <button
-                type="button"
-                onClick={() => navigate(location.state?.from ?? '/')}
-            >
-                Go back
-            </button>
+            <GoBackLink to={comeBack}>
+                <BsFillSkipBackwardFill
+                    style={{
+                        marginRight: '10',
+                    }}
+                />
+                Come Back
+            </GoBackLink>
 
             <h2>
                 {movieDetails.title} (
