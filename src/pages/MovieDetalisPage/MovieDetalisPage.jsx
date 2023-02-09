@@ -1,10 +1,13 @@
 import { useState, useEffect, Suspense } from 'react';
 import { useParams, Outlet, useLocation } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Loader from 'components/Loader';
-import { ShowInfoList, GoBackLink } from './MovieDetalisPage.styled';
+import {
+    ShowInfoList,
+    GoBackLink,
+    DetailsLink,
+} from './MovieDetalisPage.styled';
 import { BsFillSkipBackwardFill } from 'react-icons/bs';
 
 const MovieDetailsPage = () => {
@@ -88,12 +91,17 @@ const MovieDetailsPage = () => {
             <ShowInfoList>
                 <p>Additional information</p>
 
-                <ul>
+                <ul
+                    style={{
+                        marginRight: '10',
+                        listStyleType: 'none',
+                    }}
+                >
                     <li>
-                        <Link to="cast">Cast</Link>
+                        <DetailsLink to="cast">Cast</DetailsLink>
                     </li>
                     <li>
-                        <Link to="reviews">Reviews</Link>
+                        <DetailsLink to="reviews">Reviews</DetailsLink>
                     </li>
                 </ul>
             </ShowInfoList>

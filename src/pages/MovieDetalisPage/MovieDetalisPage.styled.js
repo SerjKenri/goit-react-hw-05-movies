@@ -45,3 +45,31 @@ export const ShowInfoList = styled.div`
     border-bottom: 3px outset grey;
     border-top: 3px outset grey;
 `;
+
+export const DetailsLink = styled(Link)`
+    border: 2px solid #e74c3c;
+    border-radius: 0.6em;
+    box-shadow: 0 0 40px 40px green inset, 0 0 0 0 #3498db;
+    text-align: center;
+    justify-content: center;
+    width: 60px;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    border-radius: 4px;
+    color: white;
+    text-decoration: none;
+    -webkit-transition: all 150ms ease-in-out;
+    transition: all 150ms ease-in-out;
+    &:not(last-child) {
+        margin-bottom: 10px;
+    }
+    &:focus {
+        box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
+        color: red;
+    }
+    &:hover {
+        box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
+        color: red;
+    }
+`;
