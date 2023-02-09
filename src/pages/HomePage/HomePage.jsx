@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Section, Title, List, ListLink } from './HomePage.styled';
+import { BiFilm } from 'react-icons/bi';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -43,6 +44,7 @@ const HomePage = () => {
                                 state={{ from: location }}
                                 to={`/movies/${id}`}
                             >
+                                <BiFilm />
                                 {original_title}
                             </ListLink>
                         </li>

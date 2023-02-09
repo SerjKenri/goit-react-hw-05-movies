@@ -3,6 +3,7 @@ import { useSearchParams, useLocation } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Section, List, ListLink } from './MoviePage.styled';
+import { BiFilm } from 'react-icons/bi';
 import Loader from 'components/Loader';
 
 const { default: SearchForm } = require('components/SearchForm');
@@ -68,6 +69,8 @@ const MoviesPage = () => {
                                     state={{ from: location }}
                                     to={`/movies/${id}`}
                                 >
+                                    {' '}
+                                    <BiFilm />
                                     {original_title}
                                 </ListLink>
                             </li>

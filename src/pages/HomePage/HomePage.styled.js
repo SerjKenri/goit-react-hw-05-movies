@@ -12,6 +12,8 @@ export const Title = styled.h1`
 `;
 
 export const List = styled.ul`
+    padding: 0;
+    list-style-type: none;
     margin-top: 20px;
     max-width: 400px;
 `;
